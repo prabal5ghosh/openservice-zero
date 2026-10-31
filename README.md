@@ -2,7 +2,7 @@
 
 **An independently designed, open-source, full-stack service management MVP.** It includes an admin/agent/requester web portal, persistent multi-tenant data, a service catalog, department workspaces, approvals, ticket comments, a knowledge base, asset tracking, simple automations, dashboards, reports, notifications, and audit logs.
 
-This is **not** Freshservice or a copy of Freshworks' proprietary code, branding, or UI. It is an original small-team implementation inspired by general service-management concepts. It is **not** enterprise-complete or production security certified. The application and local development require **zero paid accounts**. An optional remote deployment targets Cloudflare's Workers/D1 free plan, subject to current provider limits and account eligibility.
+It is **not** enterprise-complete or production security certified. The application and local development require **zero paid accounts**. An optional remote deployment targets Cloudflare's Workers/D1 free plan, subject to current provider limits and account eligibility.
 
 ## Start locally — zero payment, no dependencies to install
 
