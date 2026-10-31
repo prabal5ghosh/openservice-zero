@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="color-scheme" content="light"/>
+  <meta name="theme-color" content="#0f1830"/>
+  <meta name="description" content="OpenService Zero: independent service management portal for small teams."/>
+  <title>OpenService Zero — Service management made simple</title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <section id="auth" class="auth-shell">
+    <div class="auth-info">
+      <div class="brand auth-brand"><span class="brand-mark">✳</span><span>OpenService<span class="brand-light">Zero</span></span></div>
+      <div class="hero-kicker">THE OPEN SERVICE DESK</div>
+      <h1>All your team's requests.<br/><em>One simple workspace.</em></h1>
+      <p>Manage IT, HR, finance, legal, and facilities requests in one secure, approachable platform — no subscription required.</p>
+      <div class="auth-benefits"><span>✓ Department workspaces</span><span>✓ Smart routing</span><span>✓ Approval workflows</span><span>✓ Clear reporting</span></div>
+      <div class="hero-art"><div class="art-circle one"></div><div class="art-circle two"></div><div class="art-glass"><span>Today at a glance</span><div class="art-numbers"><b>24</b><b>18</b><b>96%</b></div><div class="art-labels"><small>Open</small><small>Resolved</small><small>On time</small></div><div class="art-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+    </div>
+    <div class="auth-card"><div class="auth-card-inner">
+      <div class="mobile-brand">✳ OpenServiceZero</div>
+      <div class="auth-tabs"><button id="tab-login" class="active" type="button">Sign in</button><button id="tab-register" type="button">Create workspace</button></div>
+      <div id="auth-error" class="inline-error hidden"></div>
+      <form id="loginForm" class="form-stack">
+        <h2>Welcome back</h2><p class="muted">Sign in to your organization's service portal.</p>
+        <label>Organization name or slug<input name="organization" required autocomplete="organization" placeholder="Acme Inc"/></label>
+        <label>Work email<input type="email" name="email" required autocomplete="email" placeholder="you@company.com"/></label>
+        <label>Password<input type="password" name="password" required autocomplete="current-password" placeholder="Your password"/></label>
+        <button class="btn primary full" type="submit">Sign in <span>→</span></button>
+      </form>
+      <form id="registerForm" class="form-stack hidden">
+        <h2>Start your workspace</h2><p class="muted">Create a new organization and become its admin.</p>
+        <label>Organization name<input name="organization" required maxlength="100" placeholder="Acme Inc"/></label>
+        <label>Your name<input name="name" required maxlength="90" placeholder="Alex Morgan"/></label>
+        <label>Work email<input type="email" name="email" required placeholder="alex@company.com"/></label>
+        <label>Password (12+ characters)<input type="password" name="password" minlength="12" required autocomplete="new-password" placeholder="Choose a strong password"/></label>
+        <button class="btn primary full" type="submit">Create free workspace <span>→</span></button>
+      </form>
+      <p class="form-footnote">Independent, open-source prototype. Never enter real sensitive HR or medical data during testing.</p>
+    </div></div>
+  </section>
+
+  <div id="app" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand brand-side"><span class="brand-mark">✳</span><span>OpenService<span class="brand-light">Zero</span></span></div>
+      <div class="org-switch"><span class="org-avatar" id="orgAvatar">O</span><span class="org-text"><strong id="orgName">Organization</strong><small>Workspace</small></span><span class="org-chevron">⌄</span></div>
+      <div class="sidebar-scroller">
+        <div class="nav-label">WORKSPACE</div>
+        <nav id="navigation"></nav>
+      </div>
+      <div class="sidebar-bottom"><div class="side-help"><span>✦</span><div><b>Built for small teams</b><small>100% independent & open source</small></div></div><button id="logout" class="logout" type="button">↪ &nbsp;Sign out</button></div>
+    </aside>
+    <div class="shell-right">
+      <header class="topbar"><div class="mobile-header-brand">✳ OpenServiceZero</div><div class="breadcrumb" id="breadcrumb">Overview <span>/</span> Dashboard</div><div class="top-actions"><button id="helpButton" title="New request" class="icon-button" type="button">＋</button><button id="notifyButton" title="Notifications" class="icon-button bell" type="button">♧<b id="noticeBubble" class="hidden"></b></button><button id="profileButton" class="profile" type="button" title="Account"><span id="profileInitials">AM</span></button></div></header>
+      <main class="content"><div id="view"><div class="loading-panel">Loading your workspace…</div></div></main>
+      <nav id="mobileNav" class="mobile-nav"></nav>
+    </div>
+  </div>
+  <div id="modalLayer" class="modal-layer hidden" role="dialog" aria-modal="true" aria-label="Form dialog"><div id="modalBody" class="modal-card"></div></div>
+  <div id="toasts" class="toast-area" aria-live="polite"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

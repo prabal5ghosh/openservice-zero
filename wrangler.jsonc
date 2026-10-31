@@ -1,0 +1,23 @@
+
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "openservice-zero",
+  "main": "./src/index.js",
+  "compatibility_date": "2026-10-29",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "openservice-db",
+      "database_id": "e1b3c670-adec-4375-87af-2db462b2c5fb",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
+
